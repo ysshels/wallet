@@ -1,15 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>钱包交易记录</title>
 
-    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="static/css/common.css">
     <link rel="stylesheet" href="static/css/main.css">
-    <script src="static/js/jquery/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="static/js/jquery/jquery-2.1.4.min.js"></script>
+    <style>
+        .bg-head {
+            margin: -20px -20px 0 -20px;
+            padding-top: 30px;
+            background: #FFFFFF;
+        }
+
+        .nav-tabs {
+            background: #f4f4f4;
+            border-bottom: none;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+            color: #fff;
+            background-color: #4269d5;
+            border-radius: inherit;
+            border-bottom: none;
+        }
+    </style>
 </head>
 <body>
 <div class="content main">
@@ -17,283 +40,263 @@
         <i class="ico icon-sjb"></i>钱包交易记录
         <a href="javascript:history.back();"><i class="ico icon-back fl-right"></i></a>
     </h4>
-
-    <div class="head-lie">
-        <div class="fl">
-            <div class="row">
-                <div class="col-sm-3 info-zq">
-                    <img src="static/img/qb.png" alt="" class="fl" style=" margin-right: 15px;">
-                    <p class="text-normal text-strong font-w" >钱包余额</p>
-                    <p class="text-green  text-strong">10007777元</p>
-                </div>
-                <div class="col-sm-3 info-zq">
-                    <img src="static/img/sh.png" alt="" class="fl"  style=" margin-right: 15px;">
-                    <p class="text-normal text-strong font-w" >收货总额</p>
-                    <p class="text-orger  text-strong">1027元</p>
-                </div>
-                <div class="col-sm-3 info-zq">
-                    <img src="static/img/xf.png" alt="" class="fl"  style=" margin-right: 15px;">
-                    <p class="text-normal text-strong font-w" >消费总额</p>
-                    <p class="text-red  text-strong">668777元</p>
-                </div>
-                <div class="col-sm-3 info-zqt">
-                    <a class="table-export" href="javascript:void(0);">导出余额excel</a>
+    <div class="bg-head">
+        <div class="head-lie">
+            <div class="fl">
+                <div class="row">
+                    <div class="col-sm-3 info-zq">
+                        <img src="static/img/qb.png" alt="" class="fl" style=" margin-right: 15px;">
+                        <p class="text-normal text-strong font-w">钱包余额</p>
+                        <p class="text-green  text-strong">10007777元</p>
+                    </div>
+                    <div class="col-sm-3 info-zq">
+                        <img src="static/img/sh.png" alt="" class="fl" style=" margin-right: 15px;">
+                        <p class="text-normal text-strong font-w">收货总额</p>
+                        <p class="text-orger  text-strong">1027元</p>
+                    </div>
+                    <div class="col-sm-3 info-zq">
+                        <img src="static/img/xf.png" alt="" class="fl" style=" margin-right: 15px;">
+                        <p class="text-normal text-strong font-w">消费总额</p>
+                        <p class="text-red  text-strong">668777元</p>
+                    </div>
+                    <div class="col-sm-3 info-zqt">
+                        <a class="table-export" href="javascript:void(0);">导出余额excel</a>
+                    </div>
                 </div>
             </div>
+            <div class="link-posit-t pull-right export" style="margin-top: 10px">
+                <input class="ph-select " placeholder="请输入店铺名称">
+                <button class="btn btn-green btn-sm">
+                    查询
+                </button>
+            </div>
         </div>
-        <div class="link-posit-t pull-right export" style="margin-top: 10px">
-            <input class="ph-select " placeholder="请输入店铺名称">
-            <button class="btn btn-green btn-sm" onclick="goSearch('${salesman.id}','${assess.id}');">
-                查询
-            </button>
+        <div class="clearfix"></div>
+        <div style="padding: 30px">
+            <a class="table-export info-zqt" data-toggle="modal" data-target="#yhfl">导入返利用户excel</a>
+            <a class="table-export info-zqt" data-toggle="modal" data-target="#dchd">导入活动用户excel</a>
         </div>
-    </div>
-    <div class="clearfix"></div>
-    <div  style="padding: 30px">
-        <a class="table-export info-zqt" href="javascript:void(0);">导出返利用户excel</a>
-        <a class="table-export info-zqt" href="javascript:void(0);">导出活动用户excel</a>
     </div>
     <div class="clearfix"></div>
     <div class="hr-solid"></div>
-    <!---->
+
     <div class="row">
         <div class="col-md-12">
             <!--box-->
             <div class=" box border ">
-                    <!--菜单栏-->
-                    <ul class="nav nav-tabs nav-pills">
-                        <li class="active"><a href="#box_tab1" data-toggle="tab"><span class="">交易明细</span></a></li>
-                        <li><a href="#box_tab2" data-toggle="tab"><span class="">收入</span></a></li>
-                        <li><a href="#box_tab3" data-toggle="tab"><span class="">消费</span></a></li>
-                    </ul>
+                <!--菜单栏-->
+                <ul class="nav nav-tabs nav-pills ">
+                    <li class="active"><a href="#box_tab1" data-toggle="tab"><span class="">交易明细</span></a></li>
+                    <li><a href="#box_tab2" data-toggle="tab"><span class="">收入</span></a></li>
+                    <li><a href="#box_tab1" data-toggle="tab"><span class="">消费</span></a></li>
+                </ul>
 
                 <!--box-body-->
-                <div class="box-body">
-                    <div class="marg-t text-time">
-                        <ul class="list-unstyled pay-status J-pay-staus">
-                            <li class="pay-status-active" data-item="all">全部</li>
-                            <li data-item="unpay">今天</li>
-                            <li data-item="timeout">本周</li>
-                            <li data-item="payed">本月</li>
+                <div class="row new-box">
+                    <div class="">
+                        <ul class="col-sm-6 nav nav-tabs nav-pills " style="margin-left: 15px">
+                            <li class="active"><a href="#box_tab1" data-toggle="tab"><span class="">全部</span></a></li>
+                            <li><a href="#all" data-toggle="tab"><span class="">今天</span></a></li>
+                            <li><a href="#weekday" data-toggle="tab"><span class="">本周</span></a></li>
+                            <li><a href="#month" data-toggle="tab"><span class="">本月</span></a></li>
                         </ul>
-                        <span class="text-strong chang-time">选择日期：</span>
-                        <div class="search-date">
-                            <div class="input-group input-group-sm">
-                                <span class="input-group-addon" ><i class=" glyphicon glyphicon-remove glyphicon-calendar"></i></span>
-                                <input type="text" class="form-control form_datetime input-sm" placeholder="开始日期" readonly="readonly">
+
+                        <div class="col-sm-5" style="margin-top: -8px;margin-bottom: 30px">
+                            <div class="search-date">
+                                <input type="text" class="form-control form_datetime input-sm fl  " placeholder="选择日期"
+                                       readonly="readonly" style="background: #ffffff;margin-right: 5px;width: 200px">
                             </div>
-                        </div> --
-                        <div class="search-date">
-                            <div class="input-group input-group-sm">
-                                <span class="input-group-addon"><i class=" glyphicon glyphicon-remove glyphicon-calendar"></i></span>
-                                <input type="text" class="form-control form_datetime input-sm" placeholder="结束日期" readonly="readonly">
+                            <span class="text-timeo" style="margin-left: 100px">至</span>
+                            <div class="search-date">
+                                <input type="text" class="form-control form_datetime input-sm fl  " placeholder="选择日期"
+                                       readonly="readonly" style="background: #ffffff;margin-right: 5px;width: 200px;">
                             </div>
+
+                            <button class="btn btn-newblue btn-sm" style="margin-left: 100px">
+                                检索
+                            </button>
                         </div>
-                        <!--考核开始时间-->
-                        <button class="btn btn-blue btn-sm" onclick="goSearch('${salesman.id}','${assess.id}');">
-                            检索
-                        </button>
                         <!---->
-                        <div class="link-posit pull-right">
+                        <div class="link-posit pull-right" style="margin-top: 5px">
                             <a class="table-export" href="javascript:void(0);">导出excel</a>
                         </div>
                     </div>
-                    <!--列表内容-->
-                    <!--<div class="tab-content">-->
-                        <!--&lt;!&ndash;业务揽收异常&ndash;&gt;-->
-                        <!--<div class="tab-pane fade in active" id="box_tab1">-->
-                            <!--&lt;!&ndash;table-box&ndash;&gt;-->
-                            <!--<div class="table-abnormal-list table-overflow">-->
-                                <!--<table class="table table-hover new-table abnormal-table">-->
-                                    <!--<thead>-->
-                                    <!--<tr>-->
-                                        <!--<th>包裹照片</th>-->
-                                        <!--<th>业务名称</th>-->
-                                        <!--<th>店铺名称</th>-->
-                                        <!--<th>订单号</th>-->
-                                        <!--<th>金额</th>-->
-                                        <!--<th>理由</th>-->
-                                        <!--<th>报备时间</th>-->
-                                        <!--<th>付款时间</th>-->
-                                        <!--<th>操作</th>-->
-                                    <!--</tr>-->
-                                    <!--</thead>-->
-                                    <!--<tbody>-->
-                                    <!--<tr>-->
-                                        <!--<td>-->
-                                            <!--<img src="static/img/abnormal/package.jpg" />-->
-                                            <!--<img src="static/img/abnormal/package.jpg" />-->
-                                            <!--<img src="static/img/abnormal/package.jpg" />-->
-                                        <!--</td>-->
-                                        <!--<td>易小星</td>-->
-                                        <!--<td>小米手机专卖店</td>-->
-                                        <!--<td>201603041256</td>-->
-                                        <!--<td>1012011元</td>-->
-                                        <!--<td class="reason">老板不在家，明天再来试试看要是还blablabla</td>-->
-                                        <!--<td>2015.11.12 10:30</td>-->
-                                        <!--<td><span class="icon-tag-wfk">未付款</span></td>-->
-                                        <!--<td>-->
-                                            <!--<a class="btn btn-blue btn-sm" href="javascrip:;">查看</a>-->
-                                        <!--</td>-->
-                                    <!--</tr>-->
-                                    <!--<tr>-->
-                                        <!--<td>-->
-                                            <!--<img src="static/img/abnormal/package.jpg" />-->
-                                            <!--<img src="static/img/abnormal/package.jpg" />-->
-                                            <!--<img src="static/img/abnormal/package.jpg" />-->
-                                        <!--</td>-->
-                                        <!--<td>易小星</td>-->
-                                        <!--<td>小米手机专卖店</td>-->
-                                        <!--<td>201603041256</td>-->
-                                        <!--<td>1012011元</td>-->
-                                        <!--<td class="reason">老板不在家，明天再来试试看要是还blablabla</td>-->
-                                        <!--<td>2015.11.12 10:30</td>-->
-                                        <!--<td><span class="icon-tag-wfk">未付款</span></td>-->
-                                        <!--<td>-->
-                                            <!--<a class="btn btn-blue btn-sm" href="javascrip:;">查看</a>-->
-                                        <!--</td>-->
-                                    <!--</tr>-->
-                                    <!--<tr>-->
-                                        <!--<td>-->
-                                            <!--<img src="static/img/abnormal/package.jpg" />-->
-                                            <!--<img src="static/img/abnormal/package.jpg" />-->
-                                            <!--<img src="static/img/abnormal/package.jpg" />-->
-                                        <!--</td>-->
-                                        <!--<td>易小星</td>-->
-                                        <!--<td>小米手机专卖店</td>-->
-                                        <!--<td>201603041256</td>-->
-                                        <!--<td>1012011元</td>-->
-                                        <!--<td class="reason">老板不在家，明天再来试试看要是还blablabla</td>-->
-                                        <!--<td>2015.11.12 10:30</td>-->
-                                        <!--<td>-->
-                                            <!--<span class="icon-tag-wfk">未付款</span><span class="time-out">超时</span>-->
-                                            <!--<p class="time-out-wfk">2015.09.04 17:56</p>-->
-                                        <!--</td>-->
-                                        <!--<td>-->
-                                            <!--<a class="btn btn-blue btn-sm" href="javascrip:;">查看</a>-->
-                                            <!--<a class="btn btn-yellow btn-sm" href="javascrip:;">扣罚</a>-->
-                                        <!--</td>-->
-                                    <!--</tr>-->
-                                    <!--<tr>-->
-                                        <!--<td>-->
-                                            <!--<img src="static/img/abnormal/package.jpg" />-->
-                                            <!--<img src="static/img/abnormal/package.jpg" />-->
-                                            <!--<img src="static/img/abnormal/package.jpg" />-->
-                                        <!--</td>-->
-                                        <!--<td>易小星</td>-->
-                                        <!--<td>小米手机专卖店</td>-->
-                                        <!--<td>201603041256</td>-->
-                                        <!--<td>1012011元</td>-->
-                                        <!--<td class="reason">老板不在家，明天再来试试看要是还blablabla</td>-->
-                                        <!--<td>2015.11.12 10:30</td>-->
-                                        <!--<td class="payed">-->
-                                            <!--2015.09.04 17:56-->
-                                        <!--</td>-->
-                                        <!--<td>-->
-                                            <!--<a class="btn btn-blue btn-sm" href="javascrip:;">查看</a>-->
-                                        <!--</td>-->
-                                    <!--</tr>-->
-                                    <!--<tr>-->
-                                        <!--<td>-->
-                                            <!--<img src="static/img/abnormal/package.jpg" />-->
-                                            <!--<img src="static/img/abnormal/package.jpg" />-->
-                                            <!--<img src="static/img/abnormal/package.jpg" />-->
-                                        <!--</td>-->
-                                        <!--<td>易小星</td>-->
-                                        <!--<td>小米手机专卖店</td>-->
-                                        <!--<td>201603041256</td>-->
-                                        <!--<td>1012011元</td>-->
-                                        <!--<td class="reason">老板不在家，明天再来试试看要是还blablabla</td>-->
-                                        <!--<td>2015.11.12 10:30</td>-->
-                                        <!--<td>-->
-                                            <!--<span class="icon-tag-yfk">已付款</span><span class="time-out">超时</span>-->
-                                            <!--<p class="time-out-yfk">2015.09.04 17:56</p>-->
-                                        <!--</td>-->
-                                        <!--<td>-->
-                                            <!--<a class="btn btn-blue btn-sm" href="javascrip:;">查看</a>-->
-                                            <!--<a class="btn btn-yellow btn-sm" href="javascrip:;">扣罚</a>-->
-                                        <!--</td>-->
-                                    <!--</tr>-->
-                                    <!--</tbody>-->
-                                <!--</table>-->
-                            <!--</div>-->
-                            <!--&lt;!&ndash;table-box&ndash;&gt;-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash;业务揽收异常&ndash;&gt;-->
-
-                        <!--&lt;!&ndash;客户签收异常&ndash;&gt;-->
-                        <!--<div class="tab-pane fade" id="box_tab2">-->
-                            <!--&lt;!&ndash;table-box&ndash;&gt;-->
-                            <!--<div class="table-abnormal-list table-overflow">-->
-                                <!--<table class="table table-hover new-table abnormal-table">-->
-                                    <!--<thead>-->
-                                    <!--<tr>-->
-                                        <!--<th>业务名称</th>-->
-                                        <!--<th>订单号</th>-->
-                                        <!--<th>签收地址</th>-->
-                                        <!--<th>签收时间</th>-->
-                                        <!--<th>送货时间</th>-->
-                                        <!--<th>操作</th>-->
-                                    <!--</tr>-->
-                                    <!--</thead>-->
-                                    <!--<tr>-->
-                                        <!--<td class="">-->
-                                            <!--<img width="50" height="50" src="static/img/abnormal/user-head.png" class="img-circle" />-->
-                                            <!--<div class="business-name">-->
-                                                <!--<span class="text-strong">易小川</span>(区域经理)-->
-                                                <!--<br /> 小米手机专卖店-->
-                                            <!--</div>-->
-                                        <!--</td>-->
-                                        <!--<td>201603041256</td>-->
-                                        <!--<td>-->
-                                            <!--<span class="icon-tag-yc">异常</span>-->
-                                            <!--山东省滨州市邹平县大桥镇223号-->
-                                        <!--</td>-->
-                                        <!--<td>2016.03.12 18:20</td>-->
-                                        <!--<td>6小时20分钟</td>-->
-                                        <!--<td>-->
-                                            <!--<a class="btn btn-blue btn-sm" href="javascrip:;">查看</a>-->
-                                        <!--</td>-->
-                                    <!--</tr>-->
-                                    <!--<tr>-->
-                                        <!--<td class="">-->
-                                            <!--<img width="50" height="50" src="static/img/abnormal/user-head.png" class="img-circle" />-->
-                                            <!--<div class="business-name">-->
-                                                <!--<span class="text-strong">易小川</span>(区域经理)-->
-                                                <!--<br /> 小米手机专卖店-->
-                                            <!--</div>-->
-                                        <!--</td>-->
-                                        <!--<td>201603041256</td>-->
-                                        <!--<td>-->
-                                            <!--<span class="icon-tag-yc">异常</span>-->
-                                            <!--山东省滨州市邹平县大桥镇223号-->
-                                        <!--</td>-->
-                                        <!--<td>2016.03.12 18:20</td>-->
-                                        <!--<td>6小时20分钟</td>-->
-                                        <!--<td>-->
-                                            <!--<a class="btn btn-blue btn-sm" href="javascrip:;">查看</a>-->
-                                        <!--</td>-->
-                                    <!--</tr>-->
-                                <!--</table>-->
-                            <!--</div>-->
-                            <!--&lt;!&ndash;table-box&ndash;&gt;-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash;客户签收异常&ndash;&gt;-->
-                    <!--</div>-->
-                    <!--列表内容-->
                 </div>
-                <!--box-body-->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="box_tab1">
+                        <div class="table-task-list new-table-box table-overflow">
+                            <table class="table table-hover new-table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>店铺名</th>
+                                    <th>描述</th>
+                                    <th>钱包交易号</th>
+                                    <th>订单号</th>
+                                    <th>管易单据编号</th>
+                                    <th>金额（元）</th>
+                                    <th>时间</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>台儿庄啊什么地方的数码广场</td>
+                                    <td>钱包和线上支付混合支付=-==订单支付</td>
+                                    <td>JY88838883</td>
+                                    <td>202928383838</td>
+                                    <td>201603041256</td>
+                                    <td><span class="text-red">-200</span></td>
+                                    <td>2015.11.12</td>
+                                    <td><span class="text-purple text-strong">进行中</span></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>台儿庄啊什么地方的数码广场</td>
+                                    <td>钱包和线上支付混合支付=-==订单支付</td>
+                                    <td>JY88838883</td>
+                                    <td>202928383838</td>
+                                    <td>201603041256</td>
+                                    <td><span class="text-red">-200</span></td>
+                                    <td>2015.11.12</td>
+                                    <td><span class="text-zise text-strong">成功</span></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>台儿庄啊什么地方的数码广场</td>
+                                    <td>钱包和线上支付混合支付=-==订单支付</td>
+                                    <td>JY88838883</td>
+                                    <td>202928383838</td>
+                                    <td>201603041256</td>
+                                    <td><span class="text-red">-200</span></td>
+                                    <td>2015.11.12</td>
+                                    <td><span class="text-purple text-strong">进行中</span></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>台儿庄啊什么地方的数码广场</td>
+                                    <td>钱包和线上支付混合支付=-==订单支付</td>
+                                    <td>JY88838883</td>
+                                    <td>202928383838</td>
+                                    <td>201603041256</td>
+                                    <td><span class="text-red">-200</span></td>
+                                    <td>2015.11.12</td>
+                                    <td><span class="text-zise text-strong">成功</span></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>台儿庄啊什么地方的数码广场</td>
+                                    <td>钱包和线上支付混合支付=-==订单支付</td>
+                                    <td>JY88838883</td>
+                                    <td>202928383838</td>
+                                    <td>201603041256</td>
+                                    <td><span class="text-red">-200</span></td>
+                                    <td>2015.11.12</td>
+                                    <td><span class="text-zise text-strong">成功</span></td>
+                                    <td></td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="box_tab2">
+                        <div class="table-task-list new-table-box table-overflow">
+                            <table class="table table-hover new-table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>店铺名</th>
+                                    <th>描述</th>
+                                    <th>钱包交易号</th>
+                                    <th>订单号</th>
+                                    <th>管易单据编号</th>
+                                    <th>金额（元）</th>
+                                    <th>时间</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>台儿庄啊什么地方的数码广场</td>
+                                    <td>钱包和线上支付混合支付=-==订单支付</td>
+                                    <td>JY88838883</td>
+                                    <td>202928383838</td>
+                                    <td>201603041256</td>
+                                    <td><span class="text-red">-200</span></td>
+                                    <td>2015.11.12</td>
+                                    <td><span class="text-purple text-strong">进行中</span></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>台儿庄啊什么地方的数码广场</td>
+                                    <td>钱包和线上支付混合支付=-==订单支付</td>
+                                    <td>JY88838883</td>
+                                    <td>202928383838</td>
+                                    <td>201603041256</td>
+                                    <td><span class="text-red">-200</span></td>
+                                    <td>2015.11.12</td>
+                                    <td><span class="text-zise text-strong">成功</span></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>台儿庄啊什么地方的数码广场</td>
+                                    <td>钱包和线上支付混合支付=-==订单支付</td>
+                                    <td>JY88838883</td>
+                                    <td>202928383838</td>
+                                    <td>201603041256</td>
+                                    <td><span class="text-red">-200</span></td>
+                                    <td>2015.11.12</td>
+                                    <td><span class="text-zise text-strong">成功</span></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-            <!--box-->
         </div>
-        <!--col-md-12-->
     </div>
 </div>
-</div>
+
 
 <!--alert-->
-<div id="resett" class="modal fade" role="dialog">
-    <div class="modal-dialog " role="document">
+<div id="yhfl" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content modal-blue">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">导入返利Exel</h3>
+            </div>
+
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form class="form-horizontal">
+                       <div>
+                           <span> <input id="file" name="file" type="file"> </span>
+                       </div>
+                        <div class="fr">
+                            <button type="submit" class="btn  btn-gery ">取消</button>
+                            <button type="submit" data-dismiss="modal" class="btn    btn-primary ">导入</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dchd" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog ">
         <div class="modal-content modal-blue">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
@@ -304,10 +307,12 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <form class="form-horizontal">
-                        <textarea rows="10" cols="73" class="fl-left"></textarea>
+                        <div>
+                            <span> <input id="file" name="file" type="file"> </span>
+                        </div>
                         <div class="fr">
                             <button type="submit" class="btn  btn-gery ">取消</button>
-                            <button type="submit" data-dismiss="modal" class="btn    btn-primary ">通过</button>
+                            <button type="submit" data-dismiss="modal" class="btn    btn-primary ">导入</button>
                         </div>
 
                     </form>
@@ -316,8 +321,47 @@
         </div>
     </div>
 </div>
-<script src="static/bootstrap/js/bootstrap.min.js"></script>
+<div class="modal fade" id="aaa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    模态框（Modal）标题
+                </h4>
+            </div>
+            <div class="modal-body">
+                在这里添加一些文本
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary">
+                    提交更改
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<script src="static/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="static/bootstrap/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
+    $(".form_datetime").datetimepicker({
+        format: "yyyy-mm-dd",
+        language: 'zh-CN',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        pickerPosition: "bottom-right",
+        forceParse: 0
+    });
+
 
 </script>
 </body>
