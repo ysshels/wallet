@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>红包发放</title>
+
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/common.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <style>
+        .duix{
+            margin-left: 200px;
+            width: 208px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="content main">
+    <h4 class="page-header ">
+        <i class="ico icon-sjb"></i>红包发放
+        <a href="javascript:history.back();"><i class="ico icon-back fl-right"></i></a>
+    </h4>
+
+    <div class="row">
+        <!--col begin-->
+        <div class="col-md-12">
+            <!--orderbox begin-->
+            <div class="order-box">
+                <ul>
+                    <li>
+                        <dl class="dl-horizontal">
+                            <dt>红包名称：</dt>
+                            <dd>
+                                <input class="ph-selectlg" placeholder="红包名称" >
+                            </dd>
+                        </dl>
+                    </li>
+
+                    <li>
+                        <dl class="dl-horizontal">
+                            <dt>红包金额：</dt>
+                            <dd>
+                                <select class="ph-selectlg">
+                                    <option>5</option>
+                                    <option>10</option>
+                                </select>
+                                <span>元</span>
+                            </dd>
+                        </dl>
+                    </li>
+
+                    <li>
+                        <dl class="dl-horizontal">
+                            <dt>使用条件：</dt>
+                            <dd>
+                                <input class="ph-selectlg" placeholder="不能少于100元" > <span>元</span>
+                            </dd>
+                        </dl>
+                    </li>
+
+                    <li>
+                        <dl class="dl-horizontal">
+                            <dt>发放人：</dt>
+                            <dd>
+                                <select class="ph-selectlg">
+                                    <option>小A</option>
+                                    <option>大大说</option>
+                                    <option>啊啊啊</option>
+                                    <option>嘿嘿</option>
+                                </select>
+                            </dd>
+                        </dl>
+                    </li>
+
+                    <li>
+                        <dl class="dl-horizontal">
+                            <dt>发放对象：</dt>
+                        </dl>
+                        <dl>
+                            <div class="duix">
+                                <ul class="nav nav-tabs" style="padding: 0">
+                                    <li class="active">
+                                        <a href="#area" data-toggle="tab">
+                                            按区域发放
+                                        </a>
+                                    </li>
+                                    <li><a href="#user" data-toggle="tab">按用户发放</a></li>
+                                </ul>
+                            </div>
+
+
+                           <div  class="tab-content" >
+
+                               <!--区域-->
+                               <ul class="tab-pane fade in active" id="area">
+                                   <li>
+                                       <dl class="dl-horizontal">
+                                           <dt>省：</dt>
+                                           <dd>
+                                               <select class="ph-selectlg">
+                                                   <option>山东省</option>
+                                                   <option>广东省</option>
+                                               </select>
+                                           </dd>
+                                       </dl>
+                                   </li>
+                                   <li>
+                                       <dl class="dl-horizontal">
+                                           <dt>市：</dt>
+                                           <dd>
+                                               <select class="ph-selectlg">
+                                                   <option>山东省</option>
+                                                   <option>广东省</option>
+                                               </select>
+                                           </dd>
+                                       </dl>
+                                   </li>
+                                   <li>
+                                       <dl class="dl-horizontal">
+                                           <dt>区：</dt>
+                                           <dd>
+                                               <select class="ph-selectlg">
+                                                   <option>山东省</option>
+                                                   <option>广东省</option>
+                                               </select>
+                                           </dd>
+                                       </dl>
+                                   </li>
+                               </ul>
+                                <!--姓名-->
+                               <ul  class="tab-pane fade"  id="user">
+                                   <li>
+                                       <dl class="dl-horizontal">
+                                           <dt>省：</dt>
+                                           <dd>
+                                               <select class="ph-selectlg">
+                                                   <option>山东省</option>
+                                                   <option>广东省</option>
+                                               </select>
+                                           </dd>
+                                       </dl>
+                                   </li>
+                                   <li>
+                                       <dl class="dl-horizontal">
+                                           <dt>市：</dt>
+                                           <dd>
+                                               <select class="ph-selectlg">
+                                                   <option>山东省</option>
+                                                   <option>广东省</option>
+                                               </select>
+                                           </dd>
+                                       </dl>
+                                   </li>
+                                   <li>
+                                       <dl class="dl-horizontal">
+                                           <dt>区：</dt>
+                                           <dd>
+                                               <select class="ph-selectlg">
+                                                   <option>山东省</option>
+                                                   <option>广东省</option>
+                                               </select>
+                                           </dd>
+                                       </dl>
+                                   </li>
+                                   <li>
+                                       <dl class="dl-horizontal">
+                                           <dt>用户：</dt>
+                                           <dd>
+                                               <select class="ph-selectlg">
+                                                   <option>山东省</option>
+                                                   <option>广东省</option>
+                                               </select>
+                                           </dd>
+                                       </dl>
+                                   </li>
+                               </ul>
+
+                           </div>
+                        </dl>
+                    </li>
+
+                    <li>
+                        <dl class="dl-horizontal" >
+                            <dt style="margin-top: 3px">有效时间：</dt>
+                            <dd >
+                                <p class="text-blue text-strong">本月至下月7日有效</p>
+                            </dd>
+                        </dl>
+                    </li>
+
+                    <li>
+                        <dl class="dl-horizontal" >
+                            <dt>红包备注：</dt>
+                            <dd >
+                                <textarea rows="10" cols="60" ></textarea>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+
+                <button class="btn btn-primary col-sm-2" style="margin-left:200px">确定保存</button>
+            </div>
+            <!--orderobx end-->
+        </div>
+        <!--col end-->
+    </div>
+
+</div>
+<script src="static/js/jquery/jquery-1.11.3.min.js"></script>
+<script src="static/bootstrap/js/bootstrap.js"></script>
+
+</body>
+</html>

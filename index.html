@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>主页</title>
+    <!-- Bootstrap -->
+    <link href="static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/index.css" />
+    <script src="static/js/jquery/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="navbar-header col-sm-3 col-md-2">
+                <a class="navbar-brand logo " href="#"><img src="static/img/cwgl.png" /></a>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div id="" class="row">
+        <div id="left-menu" class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar menu">
+                <li class="" role="presentation">
+                    <!--二级菜单添加menu-second-box-->
+                    <a class="menu-second-box management" href="JavaScript:;" >财务管理<span class="pull-right down-icon"></span></a>
+                    <ul class="menu-second">
+                        <li class=""><a href="record(返利记录).html" class="team">钱包交易记录</a></li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="" class="menu-second-box cli-manage" data-toggle="dropdown">红包管理<span class="pull-right down-icon"></span></a>
+                    <ul class="menu-second">
+                        <li class=""><a class="merchants-distribution" href="">红包列表</a></li>
+                        <li><a href="" class="liveness">红包领取记录列表</a></li>
+                        <li><a href="" class="deposit-customer">添加红包</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            $('.menu a,.menu li.active a').click(function(){
+                $(this).parent('li').toggleClass('active');
+                $(this).parent('li').siblings().removeClass('active');
+            })
+        </script>
+
+        <!--内容main-->
+        <div id="main" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+
+
+        </div>
+        <!--内容main-->
+    </div>
+</div>
+</body>
+<script src="static/js/jquery/jquery-1.11.3.min.js"></script>
+<script src="static/bootstrap/js/bootstrap.min.js"></script>
+
+</html>

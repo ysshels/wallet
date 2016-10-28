@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>数据表</title>
+
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/common.css">
+    <link rel="stylesheet" href="static/css/main.css">
+
+    <script src="static/js/jquery/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div class="content main">
+    <h4 class="page-header ">
+        <i class="ico icon-sjb"></i>数据表
+        <a href="javascript:history.back();"><i class="ico icon-back fl-right"></i></a>
+    </h4>
+
+    <div class="head-lie">
+        <div class="fl">
+            <span class="text-normal"> 9月返利表  </span> <span class="text-dablue">共计：200条  &nbsp;</span>  <span class="text-dared"> 201,110,000元</span>
+        </div>
+
+
+        <div class="link-posit-t pull-right export">
+            <input class="ph-select " placeholder="请输入店铺名称">
+            <button class="btn btn-green btn-sm" onclick="goSearch('${salesman.id}','${assess.id}');">
+                查询
+            </button>
+            <a class="table-export" href="javascript:void(0);">导出excel</a>
+        </div>
+
+
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="tab-content">
+        <!--待审核账单-->
+        <div class="tab-pane fade in active">
+            <!--table-box-->
+            <div class="table-task-list new-table-box table-overflow">
+                <table class="table table-hover new-table table-striped">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>序号</th>
+                        <th>商家姓名</th>
+                        <th>活动名称</th>
+                        <th>活动日期</th>
+                        <th>金额（元）</th>
+                        <th>审核人</th>
+                        <th>审核日期</th>
+                        <th>状态</th>
+                        <th>备注</th>
+                        <th>导入时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><input type="checkbox" value="" /></td>
+                        <td>01</td>
+                        <td>三际北院大大通讯</td>
+                        <td>迎国庆满00返十块</td>
+                        <td>2016-10-18</td>
+                        <td><span class="text-red">500.00</span></td>
+                        <td>张大庆</td>
+                        <td>2016-10-18</td>
+                        <td><span class="text-purple text-strong">被驳回</span></td>
+                        <td class="reason">红米购机1i90太阿啊啊啊啊</td>
+                        <td>2016-10-18</td>
+                    </tr>
+
+
+                    <tr>
+                        <td></td>
+                        <td>01</td>
+                        <td>三际北院大大通讯</td>
+                        <td>迎国庆满00返十块</td>
+                        <td>2016-10-18</td>
+                        <td><span class="text-red">500.00</span></td>
+                        <td>张大庆</td>
+                        <td>2016-10-18</td>
+                        <td><span class="text-bule text-strong">已审核</span></td>
+                        <td class="reason">红米购机1i90太阿啊啊啊啊</td>
+                        <td>2016-10-18</td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="checkbox" value="" /></td>
+                        <td>01</td>
+                        <td>三际北院大大通讯</td>
+                        <td>迎国庆满00返十块</td>
+                        <td>2016-10-18</td>
+                        <td><span class="text-red">500.00</span></td>
+                        <td>张大庆</td>
+                        <td>2016-10-18</td>
+                        <td><span class="text-purple text-strong">被驳回</span></td>
+                        <td class="reason">红米购机1i90太阿啊啊啊啊</td>
+                        <td>2016-10-18</td>
+                    </tr>
+
+
+                    <tr>
+                        <td></td>
+                        <td>01</td>
+                        <td>三际北院大大通讯</td>
+                        <td>迎国庆满00返十块</td>
+                        <td>2016-10-18</td>
+                        <td><span class="text-red">500.00</span></td>
+                        <td>张大庆</td>
+                        <td>2016-10-18</td>
+                        <td><span class="text-bule text-strong">已审核</span></td>
+                        <td class="reason">红米购机1i90太阿啊啊啊啊</td>
+                        <td>2016-10-18</td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>01</td>
+                        <td>三际北院大大通讯</td>
+                        <td>迎国庆满00返十块</td>
+                        <td>2016-10-18</td>
+                        <td><span class="text-red">500.00</span></td>
+                        <td>张大庆</td>
+                        <td>2016-10-18</td>
+                        <td><span class="text-bule text-strong">已审核</span></td>
+                        <td class="reason">红米购机1i90太阿啊啊啊啊</td>
+                        <td>2016-10-18</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div class="widget-register widget-welcome-question mt20 hidden-xs widget-welcome widget-register-slideUp"
+         style="margin-left: -30px;height: 70px">
+        <div class="container">
+            <div class="row flex-vertical-center">
+                <div class="form-group ">
+                    <div class="row" style="height: 70px">
+                        <div class="col-sm-offset-4 col-sm-10" style="margin-top: 50px;margin-bottom: 35px;">
+                            <button type="submit" class="col-sm-3 btn btn-primary text-strong"
+                                    style="margin-top: -25px;margin-right: 30px">提交
+                            </button>
+
+                            <button type="submit" class="col-sm-3 btn btn-grey text-strong"
+                                    style="margin-top: -25px">取消
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="static/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+

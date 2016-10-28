@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>待审核列表</title>
+
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/common.css">
+    <link rel="stylesheet" href="static/css/main.css">
+
+    <script src="static/js/jquery/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+        .head-lie{
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="content main">
+    <h4 class="page-header ">
+        <i class="ico icon-sjb"></i>待审核列表
+        <a href="javascript:history.back();"><i class="ico icon-back fl-right"></i></a>
+        <button class="btn btn-newgery"><i class="ico ico-tj"></i>添加返利</button>
+    </h4>
+
+    <div class="head-lie">
+
+        <div class="ph-search-date">
+            <select class="form-control  input-sm fl" placeholder="选择日期"
+                   style="background: #ffffff;margin-right: 5px;width: 200px;">
+                <option>全部</option>
+                <option>待审核</option>
+                <option>复审核</option>
+                <option>已通过</option>
+            </select>
+            <button class="btn btn-newblue btn-sm  fl" >
+                搜索
+            </button>
+        </div>
+
+        <div class="link-posit-t pull-right export">
+            <a class="table-export" href="javascript:void(0);">导出excel</a>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="tab-content">
+
+        <div class="tab-pane fade in active">
+            <!--table-box-->
+            <div class="table-task-list new-table-box table-overflow">
+                <table class="table table-hover new-table table-striped">
+                    <thead>
+                    <tr>
+                        <th>表格名称</th>
+                        <th>提交日期</th>
+                        <th>导入数据</th>
+                        <th>返利总金额</th>
+                        <th>审核人</th>
+                        <th>当前状态</th>
+                        <th>审核时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>迎国庆满00返十块</td>
+                        <td>2106-101-15</td>
+                        <td><span class="text-shuj">200条</span></td>
+                        <td><span class="text-red">20000000.00</span></td>
+                        <td>张大庆</td>
+                        <td><span class="text-strong text-zise">待审核</span></td>
+                        <td>2016-10-18</td>
+                        <td><button class="btn btn-sm-s btn-zi">去审核</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>迎国庆满00返十块</td>
+                        <td>2106-101-15</td>
+                        <td><span class="text-shuj">200条</span></td>
+                        <td><span class="text-red">20000000.00</span></td>
+                        <td>张大庆</td>
+                        <td><span class="text-strong text-lv">复审核</span></td>
+                        <td>2016-10-18</td>
+                        <td><button class="btn btn-sm-s btn-zi">去审核</button></td>
+                    </tr>
+
+
+                    <tr>
+                        <td>迎国庆满00返十块</td>
+                        <td>2106-101-15</td>
+                        <td><span class="text-shuj">200条</span></td>
+                        <td><span class="text-red">20000000.00</span></td>
+                        <td>张大庆</td>
+                        <td><span class="text-strong text-blue">已审核</span></td>
+                        <td>2016-10-18</td>
+                        <td><button class="btn btn-sm-s btn-blue">查看</button></td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td>迎国庆满00返十块</td>
+                        <td>2106-101-15</td>
+                        <td><span class="text-shuj">200条</span></td>
+                        <td><span class="text-red">20000000.00</span></td>
+                        <td>张大庆</td>
+                        <td><span class="text-strong text-blue">已审核</span></td>
+                        <td>2016-10-18</td>
+                        <td><button class="btn btn-sm-s btn-blue">查看</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>迎国庆满00返十块</td>
+                        <td>2106-101-15</td>
+                        <td><span class="text-shuj">200条</span></td>
+                        <td><span class="text-red">20000000.00</span></td>
+                        <td>张大庆</td>
+                        <td><span class="text-strong text-blue">已审核</span></td>
+                        <td>2016-10-18</td>
+                        <td><button class="btn btn-sm-s btn-blue">查看</button></td>
+                    </tr>
+
+
+                    <tr>
+                        <td>迎国庆满00返十块</td>
+                        <td>2106-101-15</td>
+                        <td><span class="text-shuj">200条</span></td>
+                        <td><span class="text-red">20000000.00</span></td>
+                        <td>张大庆</td>
+                        <td><span class="text-strong text-blue">已审核</span></td>
+                        <td>2016-10-18</td>
+                        <td><button class="btn btn-sm-s btn-blue">查看</button></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<script src="static/bootstrap/js/bootstrap.min.js"></script>
+<script src="static/bootstrap/js/bootstrap.js"></script>
+<script src="static/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="static/bootstrap/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script>
+    $(".form_datetime").datetimepicker({
+        format: "yyyy-mm-dd",
+        language: 'zh-CN',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        pickerPosition: "bottom-right",
+        forceParse: 0
+    });
+</script>
+</body>
+</html>
+
+

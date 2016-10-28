@@ -1,0 +1,354 @@
+.icon-back {
+    width: 26px;
+    height: 26px;
+    background: url("../img/main/arrow.png") no-repeat center;
+}
+
+.icon-back:hover {
+    width: 26px;
+    width: 26px;
+    background: url("../img/main/Arrow 2 .png") no-repeat center;
+}
+
+.fl-right {
+    float: right;
+    margin-top: 25px;
+    margin-right: 25px;
+}
+
+.icon-sjb{
+    background: url("../img/main/sjb.png") no-repeat center;
+}
+
+.text-normal{
+    margin-right:20px;
+    font-size: 17px;
+    color: #767676;
+    font-family: "微软雅黑";
+}
+.text-dared{
+    margin-right:10px;
+    font-size: 17px;
+    color: #ff2b2b;
+    font-family: "微软雅黑";
+}
+
+.text-dablue{
+    margin-right:10px;
+    font-size: 17px;
+    color: #7489ca;
+    font-family: "微软雅黑";
+}
+
+.fl{
+    float: left;
+}
+
+.link-posit-t {
+    display: inline-block;
+    text-align: right;
+    vertical-align: bottom;
+}
+.ph-select {
+     width: 180px;
+     height: 30px;
+     padding: 5px;
+     border: 1px solid #c6c6c6;
+     border-radius: 3px;
+     background: #ffffff;
+     color: #a7a7a7;
+     margin-bottom: 20px;
+ }
+
+.ph-selectlg {
+    width: 400px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
+    background: #ffffff;
+    color: #a7a7a7;
+    margin-bottom: 20px;
+}
+
+.btn-green{
+    color: #FFFFFF;
+    background: #9bcf79;
+}
+
+.btn-green:hover,.btn-green:active,.btn-green:focus{
+    background: #9bcf79;
+    color: #FFFFFF;
+}
+
+.hr-solid {
+    margin:0 -20px 30px -20px;
+    border-top: 1px solid #D4D4D4;
+    clear: both;
+}
+
+
+.btn-newblue{
+    color: #FFFFFF;
+    background: #5a7cdc;
+}
+
+.btn-newblue:hover,.btn-newblue:active,.btn-newblue:focus{
+    background: #5a7cdc;
+    color: #FFFFFF;
+}
+td.reason{
+    max-width:100px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.text-red{
+    color: #f74545;
+}
+.text-purple{
+    color:#ee038d ;
+}
+.text-bule{
+    color:#1aaefb ;
+}
+
+.new-table-box > table > tbody > tr:hover {
+    border-left: 2px solid #2c53c0;
+}
+.new-table-box{
+    border-top: 3px solid #2c53c0;
+}
+
+.icon-reset{
+    background: url("../img/reset.png") no-repeat center;
+}
+
+
+
+.widget-welcome.widget-welcome-question {
+    background: #fcf8e3;
+}
+
+.widget-welcome {
+
+    background-color: #fff;
+    color: #333;
+}
+
+.widget-register-slideUp {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: b;
+    animation-name: b;
+}
+
+.widget-register {
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    width: 100%;
+    margin-bottom: 0 !important;
+    background-color: #717171 !important;
+}
+
+.btn-grey{
+    color: #fff;
+    background: #b3b3b3;
+}
+.btn-grey:hover {
+    color: #fff;
+    background-color: #b3b3b3;
+    border-color: #b3b3b3;
+}
+.btn.focus, .btn:focus, .btn:hover, .btn:active {
+    color: #333;
+    text-decoration: none;
+}
+
+.btn-sm-s{
+    width:45px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 12px;
+    padding-left: 10px;
+}
+/*模态框*/
+.modal-blue .modal-header {
+    position: relative;
+    height: 48px;
+    background: #f1f1f1;
+    color: #969595;
+    font-size: 20px;
+    font-family: "微软雅黑";
+}
+
+.fr{
+    float: right;
+}
+
+.ph-search-date {
+    display: inline-block;
+    width: 10%;
+    min-width: 300px;
+    top: 12px;
+}
+
+.ph-search-date > input {
+    display: inline-block;
+    width: auto;
+    height: 30px;
+}
+
+.text-green{
+    color: #9bcf79;
+}
+.text-orger{
+    color: #D8993C;
+}
+
+
+.ico-tj{
+    background: url("../img/plus.png") no-repeat center;
+}
+.ico-tj:hover{
+    background: url("../img/plus2.png") no-repeat center;
+}
+
+.btn-newgery{
+    margin-left: 10px;
+    padding-left: 0px;
+    width: 95px;
+    height: 25px;
+    line-height: 10px;
+    color:#a8a7a7 ;
+    background:#f3f3f3;
+    border-radius: 3px;
+}
+.btn-newgery:hover,.btn-gery:focus,.btn-gery:active{
+    color:#5a7cdc ;
+}
+
+.text-shuj{
+    color: #3656b0;
+}
+.text-zise{
+    color: #7943dc;
+}
+.text-lv{
+    color: #56b72f;
+}
+
+.btn-zi{
+    padding-left: 3px;
+    background: #7943dc;
+    color: #FFFFFF;
+}
+
+.order-box {
+    /*margin: 0 -15px;*/
+   padding-left: -30px;
+    min-height: 680px;
+    background-color: #fff;
+    -webkit-text-size-adjust: none;
+}
+ul {
+    padding: 30px;
+    list-style: none;
+}
+dt {
+    font-size: 12px;
+    font-weight: bold;
+    color: #525252;
+}
+
+.dl-horizontal dt {
+    float: left;
+    width: 160px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 8px;
+}
+
+.icon-name{
+    background: url("../img/usname.png") no-repeat center;
+}
+.icon-usneme{
+    background: url("../img/name.png")no-repeat center;
+}
+.icon-nedd{
+    background: url("../img/need.png")no-repeat center;
+}
+
+.icon-ida{
+    background: url("../img/pcard.png")no-repeat center;
+}
+
+.pay-status{
+    float: left;
+    margin-right:64px;
+}
+.pay-status li{
+    float:left;
+    height:44px;
+    padding:15px;
+    border:1px solid #dedede;
+    border-right:0;
+    font-size:14px;
+    line-height: 14px;
+    color:#767676;
+    font-weight: bold;
+    cursor:pointer;
+}
+.pay-status li:last-child{
+    border-right:1px solid #dedede;
+}
+.pay-status li:hover,
+.pay-status li:active{
+    background-color:#40abe8;
+    color:#fff;
+}
+.pay-status-active{
+    background-color:#40abe8;
+    color:#fff !important;
+}
+
+.modal-blue .modal-header {
+    position: relative;
+    height: 48px;
+    background: #f1f1f1;
+    color: #969595;
+    font-size: 20px;
+    font-family: "微软雅黑";
+}
+.info-zq {
+    height: 70px;
+    width: 190px;
+    margin-left: 40px;
+    background: #fafafa;
+    padding-left: 0px;
+    box-shadow: 5px 5px 5px #ededed;
+}
+
+.info-zqt {
+    margin-top: 20px;
+    margin-left: 40px;
+    padding: 0;
+    height: 30px;
+    width: 110px;
+    background: #f1f1f1;
+}
+
+.font-w{
+    line-height: 35px;
+}
+
+.text-time{
+    font-size: 12px;
+    color: #636363;
+}

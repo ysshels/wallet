@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>账号管理</title>
+
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/common.css">
+    <link rel="stylesheet" href="static/css/main.css">
+
+    <script src="static/js/jquery/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+        .head-lie{
+            padding-bottom:30px;
+        }
+    </style>
+</head>
+<body>
+<div class="content main">
+    <h4 class="page-header ">
+        <i class="ico icon-sjb"></i>账号管理
+        <a href="javascript:history.back();"><i class="ico icon-back fl-right"></i></a>
+        <button class="btn btn-newgery"><i class="ico ico-tj"></i>添加账号</button>
+    </h4>
+
+    <div class="head-lie">
+        <div class="link-posit-t pull-right export">
+            <a class="table-export" href="javascript:void(0);">导出excel</a>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="tab-content">
+
+        <div class="tab-pane fade in active">
+            <!--table-box-->
+            <div class="table-task-list new-table-box table-overflow">
+                <table class="table table-hover new-table table-striped">
+                    <thead>
+                    <tr>
+                        <th>用户名</th>
+                        <th>真实姓名</th>
+                        <th>密码</th>
+                        <th>角色</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>user01</td>
+                        <td>杜宾</td>
+                        <td>2121355454</td>
+                        <td>市场专员</td>
+                        <td><button class="btn btn-sm-s btn-green">修改</button>
+                            <button class="btn btn-sm-s btn-red">删除</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>user01</td>
+                        <td>杜宾</td>
+                        <td>2121355454</td>
+                        <td>市场专员</td>
+                        <td><button class="btn btn-sm-s btn-green">修改</button>
+                            <button class="btn btn-sm-s btn-red">删除</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>user01</td>
+                        <td>杜宾</td>
+                        <td>2121355454</td>
+                        <td>市场专员</td>
+                        <td><button class="btn btn-sm-s btn-green">修改</button>
+                            <button class="btn btn-sm-s btn-red">删除</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>user01</td>
+                        <td>杜宾</td>
+                        <td>2121355454</td>
+                        <td>市场专员</td>
+                        <td><button class="btn btn-sm-s btn-green">修改</button>
+                            <button class="btn btn-sm-s btn-red">删除</button>
+                        </td>
+                    </tr>
+
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<script src="static/bootstrap/js/bootstrap.min.js"></script>
+<script src="static/bootstrap/js/bootstrap.js"></script>
+<script src="static/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+<script src="static/bootstrap/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script>
+    $(".form_datetime").datetimepicker({
+        format: "yyyy-mm-dd",
+        language: 'zh-CN',
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        pickerPosition: "bottom-right",
+        forceParse: 0
+    });
+</script>
+</body>
+</html>
+
+
